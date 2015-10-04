@@ -19,8 +19,9 @@ class Ball {
     mass = tmpMass;
   }
   
-  void applyForce(){
-    
+  void applyForce(PVector tmpForce){
+    PVector force = PVector.div(tmpForce, mass);
+    acceleration.add(force);
   }
   
   // Set the startposision
@@ -59,7 +60,7 @@ class Ball {
       velocity.y *= -1;
     }
     
-    text(location.x, 10, (height - 5) - (10 * id) );
+    // text(location.x, 10, (height - 5) - (10 * id) );
   }
   
   void move(){
