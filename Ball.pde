@@ -1,5 +1,8 @@
 class Ball {
   
+  // The id of the ball (used for text)
+  int id;
+  
   // The vectors used
   PVector location;
   PVector velocity;
@@ -7,9 +10,12 @@ class Ball {
   
   // The variables used
   float diameter;
+  float dHalf;
   
-  Ball(){
+  
+  Ball(int tmpId){
     acceleration = new PVector(0,0);
+    id = tmpId + 1;
   }
   
   // Set the startposision
@@ -24,11 +30,31 @@ class Ball {
   
   // Sets the start size
   void setSize(float d){
-    diameter = d;
+    diameter = 5;
+    dHalf = diameter/2;
   }
   
   void edgeDetection(){
     
+    if(location.x + dHalf > width){
+      velocity.x *= -1;
+      location.x = width - dHalf;
+    }
+    
+    if(location.x - dHalf <= 0){
+      velocity.x *= -1;
+    }
+    
+    if(location.y + dHalf >= height){
+      velocity.y *= -1;
+      location.y = height - dHalf;
+    }
+    
+    if(location.y - dHalf == 0){
+      velocity.y *= -1;
+    }
+    
+    text(location.x, 10, (height - 5) - (10 * id) );
   }
   
   void move(){
@@ -37,6 +63,7 @@ class Ball {
   
   void run(){
     fill(0);
+    diameter = 10;
     ellipse(location.x, location.y, diameter, diameter);
   }
 }

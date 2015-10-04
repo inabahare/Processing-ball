@@ -1,8 +1,11 @@
 # Processing Ball
 This is just for myself so that I can remember what happens
 
-# Methods
+## Methods
 All the ones prefixed with "set" are to be used when
+
+### construct(id)
+A unique ID is passed in to help displaying text for debugging
 
 ### .setstart(startX, startY)
 I think this one gives itself away. Sets the startposision according to the variables passed. Both are floats.
