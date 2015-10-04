@@ -13,5 +13,11 @@ Sets the start velocity
 ### .setSize(diameter)
 Set the size of the circle
 
+### .detectEdges()
+Detects the edges
+
+### .move();
+Calculates the movement of the ball
+
 ### .run();
 Creates the ellipse

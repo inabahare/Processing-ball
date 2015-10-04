@@ -27,6 +27,13 @@ class Ball {
     diameter = d;
   }
   
+  void edgeDetection(){
+    
+  }
+  
+  void move(){
+    location.add(velocity);
+  }
   
   void run(){
     fill(0);

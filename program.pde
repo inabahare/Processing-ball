@@ -16,7 +16,7 @@ void setup(){
   for(int i = 0; i < numberOfBalls; i++){
     balls.add(new Ball());
     balls.get(i).setStart(random(5, width - 5), random(5, 10));
-    balls.get(i).setVelocity(random(-2,2), random(-5, 5));
+    balls.get(i).setVelocity(0, 1);
     balls.get(i).setSize(random(1, 5));
   }
 }
@@ -26,7 +26,7 @@ void draw(){
   
   for(Ball ball : balls){
     
-    
+    ball.move();
     ball.run();
   }
 }
