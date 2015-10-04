@@ -3,19 +3,24 @@ class Ball {
   // The id of the ball (used for text)
   int id;
   
-  // The vectors used
+  // The vectors used to describe the movement
   PVector location;
   PVector velocity;
   PVector acceleration;
   
-  // The variables used
+  // The variables used to describe the ball
   float diameter;
   float dHalf;
+  float mass;
   
-  
-  Ball(int tmpId){
+  Ball(int tmpId, float tmpMass){
     acceleration = new PVector(0,0);
     id = tmpId + 1;
+    mass = tmpMass;
+  }
+  
+  void applyForce(){
+    
   }
   
   // Set the startposision
@@ -58,7 +63,9 @@ class Ball {
   }
   
   void move(){
+    velocity.add(acceleration);
     location.add(velocity);
+    acceleration.mult(0);
   }
   
   void run(){

@@ -14,7 +14,7 @@ void setup(){
   
   // Add balls to array list
   for(int i = 0; i < numberOfBalls; i++){
-    balls.add(new Ball(i));
+    balls.add(new Ball(i, 5));
     balls.get(i).setStart(random(5, width - 5), random(5, 10));
     balls.get(i).setVelocity(2, 1);
     balls.get(i).setSize(random(1, 5));
