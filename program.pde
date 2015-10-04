@@ -9,20 +9,20 @@ int sizeY = 200;
 int numberOfBalls = 2;
 
 // Global data
-PVector gravity = new PVector(0,1);
+PVector gravity = new PVector(0,5);
 
 void setup(){
   background(bg);
   size(sizeX, sizeY);
   
-  frameRate(60);
+  // frameRate(30);
   smooth();
   
   // Add balls to array list
   for(int i = 0; i < numberOfBalls; i++){
-    balls.add(new Ball(i, random(1,5)));
+    balls.add(new Ball(i, 100));
     balls.get(i).setStart(random(5, width - 5), random(5, 10));
-    balls.get(i).setVelocity(2, 1);
+    balls.get(i).setVelocity(random(-2 , 2), random(-3, 3));
     balls.get(i).setSize(random(1, 5));
   }
 }
@@ -31,8 +31,9 @@ void draw(){
   background(bg);
   
   for(Ball ball : balls){
+    // ball.applyFriction(0.1);
     ball.applyForce(gravity);
-    ball.edgeDetection();
+    ball.edgeDetection(0.1);
     ball.move();
     ball.run();
   }

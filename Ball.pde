@@ -19,6 +19,15 @@ class Ball {
     mass = tmpMass;
   }
   
+  void applyFriction(float fMag){
+    float frictionMagnitude = fMag;
+    PVector friction = velocity.get();
+    friction.mult(-1);
+    friction.normalize();
+    friction.mult(frictionMagnitude);
+    this.applyForce(friction);
+  }
+  
   void applyForce(PVector tmpForce){
     PVector force = PVector.div(tmpForce, mass);
     acceleration.add(force);
@@ -40,27 +49,31 @@ class Ball {
     dHalf = diameter/2;
   }
   
-  void edgeDetection(){
+  void edgeDetection(float friction){
     
     if(location.x + dHalf > width){
       velocity.x *= -1;
       location.x = width - dHalf;
+      this.applyFriction(friction);
     }
     
     if(location.x - dHalf <= 0){
       velocity.x *= -1;
+      this.applyFriction(friction);
     }
     
     if(location.y + dHalf >= height){
       velocity.y *= -1;
       location.y = height - dHalf;
+      this.applyFriction(friction);
     }
     
     if(location.y - dHalf == 0){
       velocity.y *= -1;
+      this.applyFriction(friction);
     }
     
-    // text(location.x, 10, (height - 5) - (10 * id) );
+    
   }
   
   void move(){

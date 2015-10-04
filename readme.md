@@ -9,6 +9,12 @@ A unique ID is passed in to help displaying text for debugging
 
 ### .applyForce(force)
 The argument passed is a vector
+This method is optional, but nice to have anyway
+
+### applyFriction(frictionMagnitude)
+This method takes the magnitude of the friction and calculates the friction from that. Optional, but nice to have.
+
+(And it's essentially an extended version of the setStart(), but shh)
 
 ### .setstart(startX, startY)
 I think this one gives itself away. Sets the startposision according to the variables passed. Both are floats.
