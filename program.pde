@@ -33,8 +33,8 @@ void draw(){
   for(Ball ball : balls){
     // ball.applyFriction(0.1);
     ball.applyForce(gravity);
-    ball.edgeDetection(0.1);
     ball.move();
     ball.run();
+    ball.edgeDetection(0.1);
   }
 }
