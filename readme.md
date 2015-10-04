@@ -2,7 +2,6 @@
 This is just for myself so that I can remember what happens
 
 # Methods
-
 All the ones prefixed with "set" are to be used when
 
 ### .setstart(startX, startY)
