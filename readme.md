@@ -10,5 +10,8 @@ I think this one gives itself away. Sets the startposision according to the vari
 ### .setVel(startVelX, startVelY)
 Sets the start velocity
 
-### . setSize(diameter)
+### .setSize(diameter)
 Set the size of the circle
+
+### .run();
+Creates the ellipse

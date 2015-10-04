@@ -18,7 +18,7 @@ class Ball {
   }
   
   // Sets the start velocity
-  void setVel(float startVelX, float startVelY){
+  void setVelocity(float startVelX, float startVelY){
     velocity = new PVector(startVelX, startVelY);
   }
   
@@ -28,4 +28,8 @@ class Ball {
   }
   
   
+  void run(){
+    fill(0);
+    ellipse(location.x, location.y, diameter, diameter);
+  }
 }
