@@ -13,6 +13,8 @@ class Ball {
   float dHalf;
   float mass;
   
+  color cc = color(0,0,0);
+  
   Ball(int tmpId, float tmpMass){
     acceleration = new PVector(0,0);
     id = tmpId + 1;
@@ -50,8 +52,7 @@ class Ball {
   }
   
   void edgeDetection(float friction){
-    
-    if(location.x + dHalf > width){
+    if(location.x + dHalf >= width){
       velocity.x *= -1;
       location.x = width - dHalf;
       this.applyFriction(friction);
@@ -73,8 +74,22 @@ class Ball {
       velocity.y *= -1;
       this.applyFriction(friction);
     }
-    
-    
+  }
+  
+  void bounce(ArrayList<Ball> bll){
+    // PVector otherBall;
+    for(int i = 0; i < numberOfBalls; i++){
+      if(i == id){
+        continue;
+      }
+      PVector otherBall = bll.get(i).location.get();
+      PVector diff = PVector.sub(otherBall, location);      
+      float tmpMag = diff.mag();
+      
+      if(tmpMag == 0){
+        cc += millis();
+      }
+    }
   }
   
   void move(){
@@ -84,7 +99,7 @@ class Ball {
   }
   
   void run(){
-    fill(0);
+    fill(cc);
     diameter = 10;
     ellipse(location.x, location.y, diameter, diameter);
   }

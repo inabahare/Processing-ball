@@ -15,11 +15,12 @@ void setup(){
   background(bg);
   size(sizeX, sizeY);
   
-  // frameRate(30);
+  // frameRate(60);
   smooth();
   
   // Add balls to array list
   for(int i = 0; i < numberOfBalls; i++){
+    
     balls.add(new Ball(i, 100));
     balls.get(i).setStart(random(5, width - 5), random(5, 10));
     balls.get(i).setVelocity(random(-2 , 2), random(-3, 3));
@@ -36,5 +37,8 @@ void draw(){
     ball.move();
     ball.run();
     ball.edgeDetection(30);
+    ball.bounce(balls);
+    
+    // text(ball.location.x, 30, 5 * ball.id);
   }
 }
