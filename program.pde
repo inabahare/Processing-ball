@@ -6,7 +6,7 @@ int sizeX = 200;
 int sizeY = 200;
 
 // Ball data
-int numberOfBalls = 2;
+int numberOfBalls = 5;
 
 // Global data
 PVector gravity = new PVector(0,5);
@@ -35,6 +35,6 @@ void draw(){
     ball.applyForce(gravity);
     ball.move();
     ball.run();
-    ball.edgeDetection(100);
+    ball.edgeDetection(30);
   }
 }
