@@ -59,6 +59,7 @@ class Ball {
     
     if(location.x - dHalf < 0){
       velocity.x *= -1;
+      this.location.x = dHalf;
       this.applyFriction(friction);
     }
     
