@@ -32,7 +32,7 @@ Detects the edges
 Calculates the movement of the ball
 
 ### Bounce
-
+Suppsedly calculates the bouning of the balls
 
 ### .run();
 Creates the ellipse
