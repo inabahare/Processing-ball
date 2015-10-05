@@ -35,6 +35,6 @@ void draw(){
     ball.applyForce(gravity);
     ball.move();
     ball.run();
-    ball.edgeDetection(0.1);
+    ball.edgeDetection(100);
   }
 }
