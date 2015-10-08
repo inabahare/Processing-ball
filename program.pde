@@ -24,7 +24,7 @@ void setup(){
     balls.add(new Ball(i, 100));
     balls.get(i).setStart(random(5, width - 5), random(5, 10));
     balls.get(i).setVelocity(random(-2 , 2), random(-3, 3));
-    balls.get(i).setSize(random(1, 5));
+    balls.get(i).setSize(50);
   }
 }
 
@@ -32,13 +32,11 @@ void draw(){
   background(bg);
   
   for(Ball ball : balls){
-    // ball.applyFriction(0.1);
     ball.applyForce(gravity);
     ball.move();
+    ball.bounce(balls);
     ball.run();
     ball.edgeDetection(30);
-    ball.bounce(balls);
     
-    // text(ball.location.x, 30, 5 * ball.id);
   }
 }

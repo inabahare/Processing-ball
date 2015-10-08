@@ -13,11 +13,12 @@ class Ball {
   float dHalf;
   float mass;
   
-  color cc = color(0,0,0);
+  color cc = color(10,4,90);
   
   Ball(int tmpId, float tmpMass){
+    // Initiate the acceleration vector
     acceleration = new PVector(0,0);
-    id = tmpId + 1;
+    id = tmpId;
     mass = tmpMass;
   }
   
@@ -30,6 +31,7 @@ class Ball {
     this.applyForce(friction);
   }
   
+  // Apply a force
   void applyForce(PVector tmpForce){
     PVector force = PVector.div(tmpForce, mass);
     acceleration.add(force);
@@ -82,12 +84,14 @@ class Ball {
       if(i == id){
         continue;
       }
-      PVector otherBall = bll.get(i).location.get();
-      PVector diff = PVector.sub(otherBall, location);      
-      float tmpMag = diff.mag();
+      Ball otherBall = bll.get(i);
       
-      if(tmpMag == 0){
-        cc += millis();
+      PVector dif = PVector.sub(this.location ,otherBall.location);
+      
+      float diffMag = dif.mag();
+      
+      if(abs(diffMag) == diameter){
+        this.location.mult(-1);
       }
     }
   }
