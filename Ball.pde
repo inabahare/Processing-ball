@@ -34,7 +34,7 @@ class Ball {
 
   // Sets the start size
   void setSize(float d) {
-    diameter = 5;
+    diameter = d;
     dHalf = diameter/2;
   }
 
