@@ -13,6 +13,7 @@ This method is optional, but nice to have anyway
 
 ### applyFriction(frictionMagnitude)
 This method takes the magnitude of the friction and calculates the friction from that. Optional, but nice to have.
+Also, use internally
 
 (And it's essentially an extended version of the setStart(), but shh)
 
@@ -25,8 +26,9 @@ Sets the start velocity
 ### .setSize(diameter)
 Set the size of the circle
 
-### .detectEdges()
+### .detectEdges(friction)
 Detects the edges
+
 
 ### .move();
 Calculates the movement of the ball
