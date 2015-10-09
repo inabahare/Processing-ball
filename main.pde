@@ -2,20 +2,20 @@ ArrayList<Ball> balls = new ArrayList<Ball>();
 
 // Window data
 color bg = color(255);
-int sizeX = 200;
-int sizeY = 200;
+int sizeX = 800;
+int sizeY = 800;
 
 // Ball data
-int numberOfBalls = 5;
+int numberOfBalls = 500;
 
 // Global data
-PVector gravity = new PVector(0,5);
+PVector gravity = new PVector(0,8);
 
 void setup(){
   background(bg);
   size(sizeX, sizeY);
   
-  // frameRate(60);
+  frameRate(60);
   smooth();
   
   // Add balls to array list
@@ -33,10 +33,10 @@ void draw(){
   
   for(Ball ball : balls){
     ball.applyForce(gravity);
-    ball.move();
-    ball.bounce(balls);
-    ball.run();
     ball.edgeDetection(30);
+    ball.bounce(balls);
+    ball.move();
+    ball.run();
     
   }
 }
