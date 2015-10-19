@@ -103,5 +103,6 @@ class Ball {
   void run() {
     fill(cc);
     ellipse(location.x, location.y, diameter, diameter);
+    // text(nf(location.x, 2, 2) + ", " + nf(location.y, 2,2), location.x - 20, location.y - 10);
   }
 }
